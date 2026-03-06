@@ -13,7 +13,7 @@ import os
 import numpy as np
 
 project_root = Path(__file__).parent.parent
-data_dir = project_root  # 数据目录绝对路径
+data_dir = project_root  
 result_dir = os.path.join(project_root, "result")
 os.makedirs(result_dir, exist_ok=True)
 
@@ -248,4 +248,5 @@ print(
 #
 plot_auc_curves(fprs, tprs, auc_result, directory=data_dir, name="auc")
 plot_prc_curves(precisions, recalls, prc_result, directory=data_dir, name="prc")
+
 
