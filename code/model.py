@@ -12,7 +12,7 @@ class DFFRGM(nn.Module):
         gcn_num_layers,  #Number of layers of residual connection in GCN
         num_dis,
     ):
-        super(GCN, self).__init__()
+        super(DFFRGM, self).__init__()
         self.feat_dim = (feat_dim,)
         self.hidden_dim = (hidden_dim,)
         self.out_dim = (out_dim,)
@@ -47,4 +47,5 @@ class DFFRGM(nn.Module):
         # Decode into Link Scores
         output = self.decoder(x_fusion)
         return output
+
 
