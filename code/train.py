@@ -3,7 +3,7 @@ import time
 import random
 import torch.nn.functional as F
 from sklearn import metrics
-from model import GCN
+from model import DFFRGM
 from data_loader import load_data
 from param import parameter_parser
 from utils import *
@@ -98,7 +98,7 @@ for k in range(k_folds):
     train_meta_data = Data(x=Meta_data.x, edge_index=Meta_network).to(device)
 
     # Build the Model
-    model = GCN(
+    model = DFFRGM(
         train_meta_data.x.shape[1],
         args.hidden_dim,
         args.out_dim,
@@ -248,3 +248,4 @@ print(
 #
 plot_auc_curves(fprs, tprs, auc_result, directory=data_dir, name="auc")
 plot_prc_curves(precisions, recalls, prc_result, directory=data_dir, name="prc")
+
