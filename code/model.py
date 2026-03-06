@@ -2,7 +2,7 @@ from layers import *
 from param import parameter_parser
 
 args = parameter_parser()
-class GCN(nn.Module):
+class DFFRGM(nn.Module):
 
     def __init__(
         self,
@@ -47,3 +47,4 @@ class GCN(nn.Module):
         # Decode into Link Scores
         output = self.decoder(x_fusion)
         return output
+
